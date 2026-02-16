@@ -52,9 +52,9 @@ function playGame(input) {
 
     }
 
-    /* for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice())
-    } */
+    for (let i = 0; i < 5; i++) {
+        playRound(getComputerChoice())
+    }
 
     console.log('Final score is: \nComputer: ' + computerScore + '\nYou: ' + humanScore)
 
