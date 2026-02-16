@@ -14,54 +14,54 @@ function getComputerChoice() {
     return input;
 } */
 
-let scoreDiv = document.createElement("div");
+const scoreDiv = document.createElement("div");
+document.body.appendChild(scoreDiv);
+
+scoreDiv.textContent = "Hello! Let's play Rock, Paper, Scissors!";
+
+let humanScore = 0;
+let computerScore = 0;
 
 function playGame(input) {
-    let humanScore = 0;
-    let computerScore = 0;
 
     function playRound(computerChoice) {
     
         if (computerChoice == input) {
-                scoreDiv.append(`It's a tie! You both picked ` + computerChoice + `!`)
+                scoreDiv.append(`It's a tie! You both picked ` + computerChoice + `!\n`)
         } else if (computerChoice == 'rock') {
             if (input == 'paper') {
-                scoreDiv.append('Rock! You win!');
+                scoreDiv.append('Rock! You win!\n');
                 humanScore++;
             } else if (input == 'scissors') {
-                scoreDiv.append('Rock! You lose!');
+                scoreDiv.append('Rock! You lose!\n');
                 computerScore++;
             }
         } else if (computerChoice == 'paper') {
             if (input == 'rock') {
-                scoreDiv.append('Paper! You lose!');
+                scoreDiv.append('Paper! You lose!\n');
                 computerScore++;
             } else if (input == 'scissors') {
-                scoreDiv.append('Paper! You win!');
+                scoreDiv.append('Paper! You win!\n');
                 humanScore++;
             }
         } else if (computerChoice == 'scissors') {
             if (input == 'rock') {
-                scoreDiv.append('Scissors! You win!');
+                scoreDiv.append('Scissors! You win!\n');
                 humanScore++;
             } else if (input == 'paper') {
-                scoreDiv.append('Scissors! You lose!');
+                scoreDiv.append('Scissors! You lose!\n');
                 computerScore++;
             }
         }
 
     }
 
-    for (let i = 0; i < 5; i++) {
-        playRound(getComputerChoice())
-    }
+    playRound(getComputerChoice());
 
-    console.log('Final score is: \nComputer: ' + computerScore + '\nYou: ' + humanScore)
+    scoreDiv.append('Current score is: Computer: ' + computerScore + '\nYou: ' + humanScore + '\n')
 
 }
 
 let rock = document.getElementById("rock").addEventListener("click", function() {playGame("rock")});
 let paper = document.getElementById("paper").addEventListener("click", function() {playGame("paper")});
 let scissors = document.getElementById("scissors").addEventListener("click", function() {playGame("scissors")});
-
-playGame();
