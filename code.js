@@ -14,14 +14,13 @@ function getComputerChoice() {
     return input;
 } */
 
-function playGame(humanChoice) {
+function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    function playRound(computerChoice) {
-        const fixedHumanChoice = humanChoice.toLowerCase();
+    function playRound(humanChoice, computerChoice) {
     
-        if (computerChoice == fixedHumanChoice) {
+        if (computerChoice == humanChoice) {
                 console.log(`It's a tie! You both picked ` + computerChoice + `!`)
         } else if (computerChoice == 'rock') {
             if (humanChoice == 'paper') {
