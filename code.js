@@ -9,20 +9,16 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
     let input = prompt(`rock, paper, or scissors?`);
     return input;
-}
+} */
 
-let rock = document.querySelector("#rock");
-let paper = document.querySelector("#paper");
-let scissors = document.querySelector("#scissors");
-
-function playGame() {
+function playGame(humanChoice) {
     let humanScore = 0;
     let computerScore = 0;
 
-    function playRound(humanChoice, computerChoice) {
+    function playRound(computerChoice) {
         const fixedHumanChoice = humanChoice.toLowerCase();
     
         if (computerChoice == fixedHumanChoice) {
@@ -62,5 +58,9 @@ function playGame() {
     console.log('Final score is: \nComputer: ' + computerScore + '\nYou: ' + humanScore)
 
 }
+
+let rock = document.getElementById("rock")
+let paper = document.getElementById("paper");
+let scissors = document.getElementById("scissors");
 
 playGame();
