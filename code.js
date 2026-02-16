@@ -14,7 +14,9 @@ function getHumanChoice() {
     return input;
 }
 
-
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
 function playGame() {
     let humanScore = 0;
