@@ -14,6 +14,8 @@ function getHumanChoice() {
     return input;
 }
 
+
+
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
@@ -51,9 +53,9 @@ function playGame() {
 
     }
 
-    for (let i = 0; i < 5; i++) {
+    /* for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice())
-    }
+    } */
 
     console.log('Final score is: \nComputer: ' + computerScore + '\nYou: ' + humanScore)
 
