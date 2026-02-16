@@ -14,6 +14,8 @@ function getComputerChoice() {
     return input;
 } */
 
+let scoreDiv = document.createElement("div");
+
 function playGame(input) {
     let humanScore = 0;
     let computerScore = 0;
@@ -21,29 +23,29 @@ function playGame(input) {
     function playRound(computerChoice) {
     
         if (computerChoice == input) {
-                console.log(`It's a tie! You both picked ` + computerChoice + `!`)
+                scoreDiv.append(`It's a tie! You both picked ` + computerChoice + `!`)
         } else if (computerChoice == 'rock') {
             if (input == 'paper') {
-                console.log('Rock! You win!');
+                scoreDiv.append('Rock! You win!');
                 humanScore++;
             } else if (input == 'scissors') {
-                console.log('Rock! You lose!');
+                scoreDiv.append('Rock! You lose!');
                 computerScore++;
             }
         } else if (computerChoice == 'paper') {
             if (input == 'rock') {
-                console.log('Paper! You lose!');
+                scoreDiv.append('Paper! You lose!');
                 computerScore++;
             } else if (input == 'scissors') {
-                console.log('Paper! You win!');
+                scoreDiv.append('Paper! You win!');
                 humanScore++;
             }
         } else if (computerChoice == 'scissors') {
             if (input == 'rock') {
-                console.log('Scissors! You win!');
+                scoreDiv.append('Scissors! You win!');
                 humanScore++;
             } else if (input == 'paper') {
-                console.log('Scissors! You lose!');
+                scoreDiv.append('Scissors! You lose!');
                 computerScore++;
             }
         }
